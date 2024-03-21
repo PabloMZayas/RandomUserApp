@@ -4,6 +4,7 @@ import androidx.recyclerview.widget.RecyclerView
 import com.bumptech.glide.Glide
 import com.example.randomuserapp.databinding.ResultItemBinding
 import com.example.randomuserapp.ui.models.ResultUi
+import com.example.randomuserapp.ui.models.UserRoomUiModel
 
 class UserViewHolder (itemBinding: ResultItemBinding) :
         RecyclerView.ViewHolder(itemBinding.root) {
@@ -16,17 +17,17 @@ class UserViewHolder (itemBinding: ResultItemBinding) :
     private var cvUser = itemBinding.cvUser
 
 
-    fun bind (resultUi: ResultUi, onItemClickListener: (ResultUi) -> Unit) = resultUi.run {
+    fun bind (userRoomUiModel: UserRoomUiModel, onItemClickListener: (UserRoomUiModel) -> Unit) = userRoomUiModel.run {
 
-        tvFullName.text = "user: ${name.title} ${name.first} ${name.last}"
-        tvUserCell.text = cell
-        tvUserGender.text = gender
+        tvFullName.text = "user: ${nameUi.title} ${nameUi.first} ${nameUi.last}"
+        //tvUserCell.text = cell
+        //tvUserGender.text = gender
         tvUserEmail.text = email
 
-        Glide.with(userImage.context).load(resultUi.picture.medium).into(userImage)
+        Glide.with(userImage.context).load(userRoomUiModel.pictureUi).into(userImage)
 
         cvUser.setOnClickListener {
-            onItemClickListener(resultUi)
+            onItemClickListener(userRoomUiModel)
         }
     }
 }

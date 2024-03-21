@@ -1,4 +1,4 @@
-package com.example.randomuserapp.data
+package com.example.randomuserapp.di
 
 import com.example.randomuserapp.data.remote.api.ApiService
 import dagger.Module

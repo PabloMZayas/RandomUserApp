@@ -6,10 +6,11 @@ import androidx.recyclerview.widget.RecyclerView
 import com.example.randomuserapp.databinding.ResultItemBinding
 import com.example.randomuserapp.ui.models.ResultUi
 import com.example.randomuserapp.ui.models.UserModelUi
+import com.example.randomuserapp.ui.models.UserRoomUiModel
 
 class UserAdapter (
-        private var items: MutableList<ResultUi>,
-        private var onUserClickListener: (ResultUi) -> Unit,
+        private var items: MutableList<UserRoomUiModel>,
+        private var onUserClickListener: (UserRoomUiModel) -> Unit,
 ) : RecyclerView.Adapter<UserViewHolder>() {
 
     override fun onCreateViewHolder(parent: ViewGroup, viewType: Int): UserViewHolder {
